@@ -2,29 +2,30 @@
 :root {
   --font-general: "Neucha", sans-serif;
   --color-bluedark: #696773;
+  --color-sky: #9bb1ff;
+  --color-light: #e2fdff;
 }
-* {box-sizing: border-box;}
+
 body {
-  max-width: 1300;
+  max-width: 1000;
   margin: 0 auto;
   font-family: var(--font-general);
 }
 
 .header__contacts {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
-.header__contacts-link{
-    display: block;
- margin-right: 18px;
+.header__contacts-link {
+  display: block;
+  margin-right: 18px;
 }
-.header__contacts-link.icon{
-    width: 40px;
-    height: 40px;
-    border-radius: 20px 25px 40px 20px;
-    overflow: hidden;
-   
+.header__contacts-link.icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px 25px 40px 20px;
+  overflow: hidden;
 }
 
 .header__contacts-link.tel {
@@ -35,6 +36,48 @@ body {
   font-size: 20px;
   line-height: 23px;
 }
-.header__contacts-link img{
-    width: 100%;
+.header__contacts-link img {
+  width: 100%;
+}
+/*---------------------- MOBILE HEADER TOOLBAR-------------------------*/
+.header__toolbar {
+  box-sizing: border-box;
+  background-color: var(--color-sky);
+  height: 70px;
+  width: 100%;
+  border: 1px solid var(--color-bluedark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.header__toolbar__logo {
+  margin-top: 10px;
+  width: 70px;
+  height: 70px;
+}
+.header__toolbar__logo-image {
+  width: 100%;
+}
+.header__toolbar__name {
+  color: var(--color-light);
+}
+.header__toolbar__name h1,
+h3 {
+  font-weight: normal;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.header__toolbar__name h1 {
+  font-size: 36px;
+}
+.header__toolbar__name h3 {
+  font-size: 24px;
+}
+.header__toolbar__burger {
+  width: 60px;
+}
+.header__toolbar__burger img {
+  width: 100%;
 }
