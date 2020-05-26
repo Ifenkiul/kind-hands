@@ -4,12 +4,16 @@
   --color-bluedark: #696773;
   --color-sky: #9bb1ff;
   --color-light: #e2fdff;
+  --color-pink: #ffa69e;
 }
 main {
   width: 100%;
   color: var(--color-bluedark);
   font-size: 25px;
   margin-top: 100px;
+}
+main * {
+  box-sizing: border-box;
 }
 .main__about {
   width: 100%;
@@ -18,14 +22,17 @@ main {
   color: var(--color-bluedark);
   font-size: 30px;
   font-weight: normal;
+  text-align: center;
 }
 .main__about p {
+  list-style: 30px;
   text-align: justify;
-  padding: 15px;
+  padding: 10px;
   margin: 0;
 }
 .main__about img:nth-child(1) {
   width: 50%;
+  padding-right: 10px;
   float: left;
 }
 .main__about__todo {
@@ -34,8 +41,22 @@ main {
   color: var(--color-light);
   padding: 20px;
 }
+.main__about__conditions {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main__about__nottodo {
+  width: 50%;
+  background-color: var(--color-pink);
+  color: white;
+  padding: 20px;
+}
 @media (max-width: 770px) {
   .main__about__todo {
+    width: 100%;
+  }
+  .main__about img:nth-child(1) {
     width: 100%;
   }
 }
