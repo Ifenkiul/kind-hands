@@ -25,11 +25,17 @@ main {
 }
 .main__about img:nth-child(1) {
   padding-right: 15px;
+  width: 50%;
   float: left;
 }
-.main__todo {
+.main__about__todo {
   width: 50%;
   background-color: var(--color-sky);
   color: var(--color-light);
   padding: 20px;
+}
+@media (max-width: 770px) {
+  .main__about__todo {
+    width: 100%;
+  }
 }
