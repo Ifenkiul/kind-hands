@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+:root {
+  --font-general: "Neucha", sans-serif;
+  --color-bluedark: #696773;
+}
+* {box-sizing: border-box;}
+body {
+  max-width: 1300;
+  margin: 0 auto;
+  font-family: var(--font-general);
+}
+
+.header__contacts {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.header__contacts-link{
+    display: block;
+ margin-right: 18px;
+}
+.header__contacts-link.icon{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px 25px 40px 20px;
+    overflow: hidden;
+   
+}
+
+.header__contacts-link.tel {
+  text-decoration: none;
+  padding: 18px 0 18px 0;
+  color: var(--color-bluedark);
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+}
+.header__contacts-link img{
+    width: 100%;
+}
