@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
+:root {
+  --font-general: "Neucha", sans-serif;
+  --color-bluedark: #696773;
+  --color-sky: #9bb1ff;
+  --color-light: #e2fdff;
+}
+main {
+  color: var(--color-bluedark);
+  font-size: 25px;
+  margin-top: 100px;
+}
+.main__about {
+  width: 100%;
+}
+.main__about h2 {
+  color: var(--color-bluedark);
+  font-size: 30px;
+  font-weight: normal;
+}
+.main__about p {
+  text-align: justify;
+  padding: 15px;
+  margin: 0;
+}
+.main__about img:nth-child(1) {
+  padding-right: 15px;
+  float: left;
+}
+.main__todo {
+  width: 50%;
+  background-color: var(--color-sky);
+  color: var(--color-light);
+  padding: 20px;
+}

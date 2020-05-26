@@ -7,7 +7,7 @@
 }
 
 body {
-  max-width: 1000;
+  max-width: 1200px;
   margin: 0 auto;
   font-family: var(--font-general);
 }
@@ -39,7 +39,8 @@ body {
 .header__contacts-link img {
   width: 100%;
 }
-/*---------------------- MOBILE HEADER TOOLBAR-------------------------*/
+
+/*--------------------------HEADER DESKTOP------------------------------*/
 .header__toolbar {
   box-sizing: border-box;
   background-color: var(--color-sky);
@@ -51,8 +52,22 @@ body {
   align-items: center;
   padding: 0 15px;
 }
+.header__toolbar__burger {
+  display: none;
+}
+.header__toolbar {
+  box-sizing: border-box;
+  background-color: var(--color-sky);
+  height: 70px;
+  width: 100%;
+  border: 1px solid var(--color-bluedark);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
 .header__toolbar__logo {
   margin-top: 10px;
+  padding-left: 60px;
   width: 70px;
   height: 70px;
 }
@@ -66,7 +81,7 @@ body {
 h3 {
   font-weight: normal;
   text-align: center;
-  padding: 0;
+  padding: 0 10px;
   margin: 0;
 }
 .header__toolbar__name h1 {
@@ -75,9 +90,55 @@ h3 {
 .header__toolbar__name h3 {
   font-size: 24px;
 }
-.header__toolbar__burger {
-  width: 60px;
-}
+
 .header__toolbar__burger img {
   width: 100%;
 }
+.header__menu {
+  background-color: var(--color-sky);
+  color: var(--color-light);
+}
+.header__menu__list {
+  display: flex;
+  list-style-type: none;
+  font-size: 20px;
+  margin: 0;
+  text-align: center;
+}
+.header__menu__list li {
+  padding-left: 15px;
+}
+
+/*----------------------MOBILE FIRST------------------*/
+/*---------------------- MOBILE HEADER TOOLBAR-------------------------*/
+@media (max-width: 770px) {
+  .header__toolbar {
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__toolbar__name h1,
+  h3 {
+    padding: 0;
+    margin: 0;
+  }
+
+  .header__toolbar__burger {
+    display: block;
+    width: 60px;
+  }
+  .header__menu {
+    width: 100%;
+    position: fixed;
+    top: 160px;
+    left: -50%;
+    font-size: 36px;
+  }
+  .header__menu__list {
+    flex-direction: column;
+  }
+  .header__menu__list li {
+    padding: 15px 0 15px;
+    font-size: 36px;
+  }
+}
+/*----------------------MOBILE FIRST------------------*/
