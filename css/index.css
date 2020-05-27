@@ -52,11 +52,56 @@ main * {
   color: white;
   padding: 20px;
 }
+/*   ---------------------- SERVICES-------------------------*/
+.services {
+  width: 100%;
+  position: relative;
+}
+.services h2 {
+  padding: 15px 15px;
+}
+.services__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.services__item {
+  padding: 10px;
+  cursor: pointer;
+}
+.services__item h3 {
+  text-align: left;
+  font-size: 20px;
+}
+.services__item img {
+  width: 100%;
+  opacity: 90%;
+}
+.services__back__detail {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  border: 1px solid var(--color-bluedark);
+  background-color: rgba(155, 177, 255, 0.7);
+  color: var(--color-light);
+  transform: translateX(-50%) translateY(-50%);
+  padding: 15px;
+  max-height: 80%;
+}
+.services__back__detail p {
+  text-align: justify;
+}
 @media (max-width: 770px) {
   .main__about__todo {
     width: 100%;
   }
   .main__about img:nth-child(1) {
     width: 100%;
+  }
+  .main__about__nottodo {
+    width: 100%;
+  }
+  /*   ---------------------- SERVICES-------------------------*/
+  .services__container {
+    grid-template-columns: 1fr;
   }
 }
