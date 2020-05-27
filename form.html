@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Добрі руки</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/form.css">
+</head>
+
+<body>
+    <header>
+        <div class="header__contacts">
+            <a class="header__contacts-link tel" href="tel:+38(096) 121-23-04">+38 (096) 121-23-04</a>
+            <a class="header__contacts-link icon facebook"
+                href="https://www.facebook.com/profile.php?id=100033438499059" target="_blank">
+                <img src="img/facebook_icon.png" alt="Facebook icon">
+            </a>
+            <a class="header__contacts-link icon telegram" href="tg://resolve?domain=Ifenkiul" target="_blank">
+                <img class="header__contacts__tg-image" src="img/telegram_icon.png" alt="telegram icon">
+            </a>
+        </div>
+        <div class="header__toolbar">
+            <div class="header__toolbar__logo">
+                <img class="header__toolbar__logo-image" src="img/hands_mobile.png" alt="Hands image">
+            </div>
+            <div class="header__toolbar__name">
+                <h1>"ДОБРІ РУКИ"</h1>
+                <h3>лікувальний масаж</h3>
+            </div>
+            <div class="header__toolbar__burger">
+                <img src="img/burger_icon.png" alt="burger image">
+            </div>
+            <nav class="header__menu">
+                <ul class="header__menu__list">
+                    <li><a href="index.html#about">ДОВІДКА</a></li>
+                    <li><a href="index.html#services">НАШІ ПОСЛУГИ</a> </li>
+                    <li><a href="index.html#certificates">СЕРТИФІКАТИ</a> </li>
+                    <li><a href="#">АКЦІЇ</a></li>
+                    <li><a href="form.html">ЗАПИСАТИСЬ</a> </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h3>БАЖАЄТЕ ЗАПИСАТИСЬ НА МАСАЖ? МОЖЛИВО У ВАС Є ПИТАННЯ? <br> НАПИШІТЬ НАМ</h3>
+        <article class="mail">
+
+            <h4>ВВЕДІТЬ ІНФОРМАЦІЮ ПРО СЕБЕ</h4>
+            <form class="mail__form" action="https://formspree.io/mqkyejnj" method="POST">
+                <label>Введіть свої прізвище та ім'я <br>
+                    <input class="mail__form__input" type="text" name="name" placeholder="Вводьте ім'я тут">
+                </label>
+                <br>
+
+                <label>* Введіть будь ласка адресу електронної пошти: <br>
+                    <input class="mail__form__input" type="email" name="input_email" placeholder="youremail@example.com"
+                        required>
+                </label>
+                <br>
+                <label>Введіть будь ласка контактний номер телефону: <br>
+                    <input class="mail__form__input" type="tel" name="input_tel" placeholder="+38 (ххx) xxx-xx-xx">
+                </label>
+                <br>
+                <label>
+                    Яке Ви маєте запитання:
+                    <br>
+                    <textarea class="mail__form__input" name="question" cols="20" rows="10"
+                        placeholder="Введіть своє замовлення або запитання тут"></textarea>
+                </label>
+                <br>
+
+                <button class="mail__form__input btn submit" type="submit" name="recruit_form_sent"
+                    value="recruiter">Надіслати
+                </button>
+                <button class="mail__form__input btn reset" type="reset" name="recruit_form_sent"
+                    value="recruiter">Очистити
+                </button>
+            </form>
+
+        </article>
+    </main>
+</body>
+
+</html>
