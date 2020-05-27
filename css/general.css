@@ -130,7 +130,7 @@ h3 {
 }
 .header__menu__list a:hover {
   color: var(--color-bluedark);
-  text-shadow: 5px 5px 10px var(--color-pink);
+  text-shadow: 5px 5px 5px white;
 }
 .header__menu__list a:active {
   color: var(--color-pink);
