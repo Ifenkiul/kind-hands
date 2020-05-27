@@ -40,6 +40,22 @@ body {
 .header__contacts-link img {
   width: 100%;
 }
+.header__contacts-link.icon:hover {
+  box-shadow: 0 0 15px var(--color-sky);
+  background-color: var(--color-sky);
+}
+.header__contacts-link.tel:hover {
+  color: var(--color-sky);
+  text-shadow: 0 0 15px var(--color-sky);
+}
+.header__contacts-link.icon:active {
+  box-shadow: 0 0 15px var(--color-pink);
+  background-color: var(--color-pink);
+}
+.header__contacts-link.tel:active {
+  text-shadow: 0 0 15px var(--color-pink);
+  color: var(--color-pink);
+}
 
 /*--------------------------HEADER DESKTOP------------------------------*/
 .header__toolbar {
@@ -97,7 +113,6 @@ h3 {
 }
 .header__menu {
   background-color: var(--color-sky);
-  color: var(--color-light);
 }
 .header__menu__list {
   display: flex;
@@ -108,6 +123,18 @@ h3 {
 }
 .header__menu__list li {
   padding-left: 15px;
+}
+.header__menu__list a {
+  text-decoration: none;
+  color: var(--color-light);
+}
+.header__menu__list a:hover {
+  color: var(--color-bluedark);
+  text-shadow: 5px 5px 10px var(--color-pink);
+}
+.header__menu__list a:active {
+  color: var(--color-pink);
+  text-shadow: 5px 5px 10px var(--color-pink);
 }
 /*---------------------- FOOTER-------------------------*/
 footer {
@@ -128,15 +155,12 @@ footer img {
 }
 .footer__contacts-link {
   display: block;
-  margin-right: 18px;
   margin: 0;
   padding: 0;
 }
 .footer__contacts-link img {
-  width: 40px;
-  height: 40px;
-  padding-right: 10px;
-  border-radius: 20px 25px 40px 20px;
+  border-radius: 20px 50px 20px 50px;
+  margin-right: 10px;
   overflow: hidden;
 }
 
@@ -147,8 +171,24 @@ footer img {
   font-weight: bold;
   font-size: 20px;
   line-height: 23px;
+  text-decoration: none;
 }
-
+.footer__contacts-link:hover {
+  color: var(--color-bluedark);
+  text-shadow: 10px 10px 10px white;
+}
+.footer__contacts-link img:hover {
+  background-color: #fff;
+  box-shadow: 0 0 15px white;
+}
+.footer__contacts-link:active {
+  color: var(--color-pink);
+  text-shadow: 10px 10px 10px var(--color-pink);
+}
+.footer__contacts-link img:active {
+  box-shadow: 0 0 15px var(--color-pink);
+  background-color: var(--color-pink);
+}
 /*----------------------MOBILE ------------------*/
 @media (max-width: 770px) {
   /*---------------------- HEADER-------------------------*/
