@@ -35,17 +35,18 @@
             </div>
             <nav class="header__menu">
                 <ul class="header__menu__list">
-                    <li>ДОВІДКА</li>
-                    <li>НАШІ ПОСЛУГИ</li>
-                    <li>АКЦІЇ</li>
-                    <li>ЗАПИСАТИСЬ</li>
+                    <li><a href="#about">ДОВІДКА</a></li>
+                    <li><a href="#services">НАШІ ПОСЛУГИ</a> </li>
+                    <li><a href="#certificates">СЕРТИФІКАТИ</a> </li>
+                    <li><a href="#">АКЦІЇ</a></li>
+                    <li><a href="#contact">ЗАПИСАТИСЬ</a> </li>
 
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <article class="main__about">
+        <article id="about" class="main__about">
             <h2>ЧИ ПОТРІБЕН ВАМ МАСАЖ?</h2>
             <p><img src="img/main__about.jpg" alt="About massage image">Найдавнішим і
                 ефективним способом зміцнення здоров’я і профілактики багатьох захворювань, без перебільшення, можна
@@ -104,7 +105,7 @@
                 </section>
             </div>
         </article>
-        <article class="services">
+        <article id="services" class="services">
             <h2>МИ ПРОПОНУЄМО</h2>
             <div class="services__container">
                 <section class="services__item">
@@ -150,7 +151,7 @@
         </article>
 
         <!-- SLIDER HERE-->
-        <article class="certificates">
+        <article id="certificates" class="certificates">
             <h2>НАШІ СЕРТИФІКАТИ</h2>
             <section class="certificates__item">
                 <img src="img/certificate_01.jpg" alt="Certificate Parntner Plus">
@@ -158,6 +159,19 @@
         </article>
 
     </main>
+    <footer>
+        <div class="footer__contacts">
+            <a class="footer__contacts-link icon" href="tel:+38(096) 121-23-04">
+                <img src="img/phone_icon.png" alt="Phone icon">+38 (096) 121-23-04</a>
+            <a class="footer__contacts-link icon facebook"
+                href="https://www.facebook.com/profile.php?id=100033438499059" target="_blank">
+                <img src="img/facebook_icon.png" alt="Facebook icon"> Наша сторінка на Facebook
+            </a>
+            <a class="footer__contacts-link icon telegram" href="tg://resolve?domain=Ifenkiul" target="_blank">
+                <img src="img/telegram_icon.png" alt="telegram icon">Напишіть нам в Telegram
+            </a>
+        </div>
+    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/index.js"></script>
 
