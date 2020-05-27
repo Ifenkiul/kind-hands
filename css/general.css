@@ -131,7 +131,7 @@ h3 {
 }
 .header__menu__list a:hover {
   color: var(--color-bluedark);
-  text-shadow: 5px 5px 15px white;
+  text-shadow: 5px 5px 10px 15px white;
 }
 .header__menu__list a:active {
   color: var(--color-pink);

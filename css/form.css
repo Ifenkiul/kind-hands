@@ -41,4 +41,15 @@ main h3 {
 }
 .mail__form__input:focus {
   background-color: var(--color-light);
+  box-shadow: 0 0 5px 5px white;
+}
+.mail__form__input:hover {
+  box-shadow: 0 0 5px 5px white;
+  cursor: pointer;
+}
+.mail__form__input.btn.submit:active {
+  box-shadow: 0 0 5px 5px green;
+}
+.mail__form__input.btn.reset:active {
+  box-shadow: 0 0 5px 5px red;
 }
