@@ -138,3 +138,14 @@ main * {
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 350px) {
+  .header__toolbar__name {
+    display: none;
+  }
+  .header__name__mini {
+    display: block;
+  }
+  .header__name__mini p {
+    text-align: center;
+  }
+}

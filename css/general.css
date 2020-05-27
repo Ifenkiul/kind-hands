@@ -94,6 +94,10 @@ body {
 .header__toolbar__name {
   color: var(--color-light);
 }
+.header__name__mini {
+  text-align: center;
+  display: none;
+}
 .header__toolbar__name h1,
 h3 {
   font-weight: normal;
@@ -237,10 +241,5 @@ footer img {
   .menu-burger {
     bottom: 0;
     left: 50%;
-  }
-}
-@media (max-width: 350px) {
-  .header__toolbar__name {
-    display: none;
   }
 }
