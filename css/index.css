@@ -31,9 +31,10 @@ main * {
   padding: 10px;
   margin: 0;
 }
-.main__about img:nth-child(1) {
+.main__about img {
   width: 50%;
-  padding-right: 10px;
+  margin-right: 10px;
+  border: 1px solid var(--color-bluedark);
   float: left;
 }
 .main__about__todo {
@@ -59,6 +60,9 @@ main * {
   position: relative;
   margin-top: 100px;
 }
+.services * {
+  box-sizing: border-box;
+}
 .services h2 {
   padding: 15px 15px;
 }
@@ -70,11 +74,15 @@ main * {
   padding: 10px;
   cursor: pointer;
 }
+.services__item img:hover {
+  box-shadow: 0 0 15px var(--color-sky);
+}
 .services__item h3 {
   text-align: left;
   font-size: 20px;
 }
 .services__item img {
+  border: 1px solid var(--color-bluedark);
   width: 100%;
   opacity: 90%;
 }
