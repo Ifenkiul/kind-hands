@@ -9,7 +9,7 @@ burgerBtn.addEventListener("click", function () {
 const toolbar = document.querySelector(".header__toolbar");
 
 window.addEventListener("scroll", function () {
-  const windowScroll = this.pageYOffset;
+  const windowScroll = window.scrollY;
 
   if (windowScroll > 400) {
     toolbar.classList.add("header__tolbar-fixed");
