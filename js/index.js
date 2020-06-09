@@ -37,4 +37,17 @@ window.addEventListener("scroll", function () {
   } else {
     document.querySelector(".services").classList.remove("services-normal");
   }
+
+  const coordinatesCertificates = document
+    .querySelector(".certificates")
+    .getBoundingClientRect().top;
+  if (coordinatesCertificates < 350) {
+    document
+      .querySelector(".certificates")
+      .classList.add("certificates-normal");
+  } else {
+    document
+      .querySelector(".certificates")
+      .classList.remove("certificates-normal");
+  }
 });
