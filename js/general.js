@@ -1,13 +1,3 @@
-"use strict";
-
-$(".services__item").click(function (event) {
-  $(".services__back__detail").toggleClass("visible__box");
-});
-
-$(".services__back__detail").click(function (event) {
-  $(".services__back__detail").toggleClass("visible__box");
-});
-
 //НАТИСКАННЯ НА БУРГЕР КНОПКУ
 const burgerBtn = document.querySelector(".header__toolbar__burger");
 burgerBtn.addEventListener("click", function () {
