@@ -11,7 +11,7 @@ const toolbar = document.querySelector(".header__toolbar");
 window.addEventListener("scroll", function () {
   const windowScroll = window.scrollY;
 
-  if (windowScroll > 400) {
+  if (windowScroll > 80) {
     toolbar.classList.add("header__tolbar-fixed");
   } else toolbar.classList.remove("header__tolbar-fixed");
 });

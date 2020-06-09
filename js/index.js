@@ -12,9 +12,9 @@ window.addEventListener("scroll", function () {
   const coordinatesConditions = document
     .querySelector(".main__about__conditions")
     .getBoundingClientRect().top;
-  document.querySelector(".counter").innerText = `${coordinatesConditions}`;
+  // document.querySelector(".counter").innerText = `${coordinatesConditions}`;
   if (coordinatesConditions < 300) {
-    document.querySelector(".counter").innerText += "coordinate <500";
+    // document.querySelector(".counter").innerText += "coordinate <500";
     document
       .querySelector(".main__about__todo")
       .classList.add("main__about__todo-normal");
