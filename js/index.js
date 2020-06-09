@@ -8,20 +8,33 @@ $(".services__back__detail").click(function (event) {
   $(".services__back__detail").toggleClass("visible__box");
 });
 
-//НАТИСКАННЯ НА БУРГЕР КНОПКУ
-const burgerBtn = document.querySelector(".header__toolbar__burger");
-burgerBtn.addEventListener("click", function () {
-  document.querySelector(".header__menu").classList.toggle("menu-burger");
-  burgerBtn.classList.toggle("header__toolbar__burger-clicked");
-});
-
-//ФІКСАЦІЯ ГОЛОВНОГО МЕНЮ ПРИ СКРОЛІ
-const toolbar = document.querySelector(".header__toolbar");
-
 window.addEventListener("scroll", function () {
-  const windowScroll = this.pageYOffset;
-
-  if (windowScroll > 400) {
-    toolbar.classList.add("header__tolbar-fixed");
-  } else toolbar.classList.remove("header__tolbar-fixed");
+  const coordinatesConditions = document
+    .querySelector(".main__about__conditions")
+    .getBoundingClientRect().top;
+  document.querySelector(".counter").innerText = `${coordinatesConditions}`;
+  if (coordinatesConditions < 300) {
+    document.querySelector(".counter").innerText += "coordinate <500";
+    document
+      .querySelector(".main__about__todo")
+      .classList.add("main__about__todo-normal");
+    document
+      .querySelector(".main__about__nottodo")
+      .classList.add("main__about__nottodo-normal");
+  } else {
+    document
+      .querySelector(".main__about__todo")
+      .classList.remove("main__about__todo-normal");
+    document
+      .querySelector(".main__about__nottodo")
+      .classList.remove("main__about__nottodo-normal");
+  }
+  const coordinatesServices = document
+    .querySelector(".services")
+    .getBoundingClientRect().top;
+  if (coordinatesServices < 250) {
+    document.querySelector(".services").classList.add("services-normal");
+  } else {
+    document.querySelector(".services").classList.remove("services-normal");
+  }
 });

@@ -37,28 +37,49 @@ main * {
   border: 1px solid var(--color-bluedark);
   float: left;
 }
-.main__about__todo {
-  width: 50%;
-  background-color: var(--color-sky);
-  color: var(--color-light);
-  padding: 20px;
-}
+
 .main__about__conditions {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 }
-.main__about__nottodo {
+.main__about__todo {
+  width: 1px;
+  background-color: var(--color-sky);
+  color: var(--color-light);
+  padding: 20px;
+  transition: all 0.9s;
+  opacity: 0;
+}
+.main__about__todo-normal {
   width: 50%;
+  opacity: 100%;
+}
+
+.main__about__nottodo {
+  width: 1px;
   background-color: var(--color-pink);
   color: white;
   padding: 20px;
+  transition: all 0.9s;
+  opacity: 0;
 }
+.main__about__nottodo-normal {
+  width: 50%;
+  opacity: 100%;
+}
+
 /*   ---------------------- SERVICES-------------------------*/
 .services {
   width: 100%;
   position: relative;
   margin-top: 100px;
+  opacity: 0;
+  transition: all 1.5s;
+}
+.services-normal {
+  opacity: 100%;
 }
 .services * {
   box-sizing: border-box;
