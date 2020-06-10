@@ -1,12 +1,14 @@
 "use strict";
 
 //-------------------------------- СЕРВІСИ НАТИСКАННЯ НА ЕЛЕМЕНТ
-const servicesItem = document.querySelector(".services__item");
+const servicesItem = document.querySelectorAll(".services__item");
 const servicesDetail = document.querySelector(".services__back__detail");
 
-servicesItem.addEventListener("click", function () {
-  servicesDetail.classList.toggle("visible__box");
-});
+servicesItem.forEach((element) =>
+  element.addEventListener("click", function () {
+    servicesDetail.classList.toggle("visible__box");
+  })
+);
 
 servicesDetail.addEventListener("click", function (event) {
   servicesDetail.classList.toggle("visible__box");
