@@ -223,7 +223,7 @@ footer img {
     transform: rotateZ(90deg);
   }
   .header__menu {
-    background-color: rgba(155, 177, 255, 0.5);
+    background-color: rgba(155, 177, 255, 0.8);
     width: 100%;
     position: fixed;
     top: 65px;

@@ -17,16 +17,15 @@ servicesDetail.addEventListener("click", function (event) {
 //----------------------------------------- CERTIFICATES SLIDER
 let itemVisible = 0;
 let itemPrevious = 0;
-const sliderElements = document.querySelectorAll(".certificates__item");
 
+const sliderElements = document.querySelectorAll(".certificates__item");
 const sliderBtnNext = document.querySelector(".certificates__slider-btn.next");
 const sliderBtnPrev = document.querySelector(".certificates__slider-btn.prev");
 
 sliderBtnNext.addEventListener("click", function () {
   itemPrevious = itemVisible;
-  if (itemVisible + 1 < sliderElements.length) {
-    itemVisible++;
-  } else {
+  itemVisible++;
+  if (itemVisible >= sliderElements.length) {
     itemVisible = 0;
   }
   certificatesShowSlide(sliderElements, itemVisible, itemPrevious);
@@ -34,15 +33,15 @@ sliderBtnNext.addEventListener("click", function () {
 
 sliderBtnPrev.addEventListener("click", function () {
   itemPrevious = itemVisible;
-  if (itemVisible === 0) {
+  itemVisible--;
+  if (itemVisible < 0) {
     itemVisible = sliderElements.length - 1;
-  } else {
-    itemVisible--;
   }
   certificatesShowSlide(sliderElements, itemVisible, itemPrevious);
 });
 
 function certificatesShowSlide(sliderElements, index, indexPrevious) {
+  console.log(sliderElements[index].id);
   sliderElements[indexPrevious].style.display = "none";
   sliderElements[index].style.display = "block";
 }

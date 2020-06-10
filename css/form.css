@@ -53,3 +53,10 @@ main h3 {
 .mail__form__input.btn.reset:active {
   box-shadow: 0 0 5px 5px red;
 }
+
+/*----------------------------------- MOBILE VERSION ------------------------*/
+@media (max-width: 770px) {
+  main {
+    margin-top: 50px;
+  }
+}
