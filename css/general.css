@@ -74,6 +74,7 @@ body {
 .header__tolbar-fixed {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 9999;
   background-color: rgba(155, 177, 255, 0.9);
 }
@@ -222,7 +223,7 @@ footer img {
     transform: rotateZ(90deg);
   }
   .header__menu {
-    background-color: rgba(155, 177, 255, 0.7);
+    background-color: rgba(155, 177, 255, 0.5);
     width: 100%;
     position: fixed;
     top: 65px;
