@@ -1,18 +1,59 @@
 "use strict";
 
+//------------------------ЗАВАНТАЖУЄМО JSON з ОПИСАМИ СЕРВІСІВ
+let servicesInfo = [];
+let keysofServices;
+async function fetchJson() {
+  const response = await fetch("/json/services.json");
+  servicesInfo = await response.json();
+  keysofServices = Object.keys(servicesInfo);
+}
+fetchJson();
+
 //-------------------------------- СЕРВІСИ НАТИСКАННЯ НА ЕЛЕМЕНТ
 const servicesItem = document.querySelectorAll(".services__item");
 const servicesDetail = document.querySelector(".services__back__detail");
+const servicesText = document.querySelector(".services__text");
+const servicesTextTitle = document.querySelector(".services__text-title");
 
 servicesItem.forEach((element) =>
-  element.addEventListener("click", function () {
-    servicesDetail.classList.toggle("visible__box");
-  })
+  element.addEventListener("click", servicesLoadText)
 );
 
 servicesDetail.addEventListener("click", function (event) {
   servicesDetail.classList.toggle("visible__box");
 });
+
+function servicesLoadText(event) {
+  let index = -1;
+
+  servicesDetail.classList.toggle("visible__box");
+
+  switch (event.currentTarget.id) {
+    case "classic__back":
+      index = 0;
+      break;
+    case "neck":
+      index = 1;
+      break;
+    case "lymfo__drenage":
+      index = 2;
+      break;
+    case "chest":
+      index = 3;
+      break;
+    case "anti__cellulite":
+      index = 4;
+      break;
+    case "hands":
+      index = 5;
+      break;
+  }
+  if (index !== -1) {
+    servicesTextTitle.textContent = keysofServices[index];
+    servicesText.textContent = servicesInfo[keysofServices[index]];
+  }
+}
 
 //----------------------------------------- CERTIFICATES SLIDER
 let itemVisible = 0;
