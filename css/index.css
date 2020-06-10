@@ -39,6 +39,7 @@ main * {
 }
 
 .main__about__conditions {
+  margin-top: 40px;
   width: 100%;
   display: flex;
   flex-wrap: wrap;

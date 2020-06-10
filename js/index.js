@@ -4,7 +4,7 @@
 let servicesInfo = [];
 let keysofServices;
 async function fetchJson() {
-  const response = await fetch("/json/services.json");
+  const response = await fetch("services.json");
   servicesInfo = await response.json();
   keysofServices = Object.keys(servicesInfo);
 }
