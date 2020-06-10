@@ -134,7 +134,7 @@ main * {
 }
 /*   ---------------------- CERTIFICATES-------------------------*/
 .certificates {
-  width: 60%;
+  width: 100%;
   margin: auto;
   opacity: 0;
   transition: all 1s;
@@ -149,9 +149,39 @@ main * {
 .certificates h2 {
   text-align: center;
 }
-.certificates__item img {
-  width: 100%;
+
+.certificates__slider {
+  width: 70%;
+  margin: auto;
+  position: relative;
 }
+.certificates__slider-btn {
+  position: absolute;
+  top: 50%;
+  background-color: green;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.certificates__slider-btn.next {
+  right: 0;
+  height: 100%;
+}
+.certificates__slider-btn.prev {
+  left: 0;
+  height: 100%;
+}
+.certificates__item {
+  box-sizing: border-box;
+  display: none;
+  width: 100%;
+  border: 1px solid var(--color-bluedark);
+}
+.certificates__slider img:first-child {
+  display: block;
+}
+
+/*----------------------------------------------      MOBILE VERSION              --------------------------------------*/
 @media (max-width: 770px) {
   .main__about__todo {
     width: 100%;
