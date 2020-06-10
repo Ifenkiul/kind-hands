@@ -163,12 +163,8 @@ main * {
   display: flex;
   align-items: center;
   width: 5%;
-  height: 90%;
   outline: none;
-}
-
-.certificates__slider-btn:active {
-  background-color: rgba(155, 177, 255, 0.5);
+  transition: all 0.2s;
 }
 .certificates__slider-btn-image {
   width: 100%;
@@ -184,11 +180,11 @@ main * {
 }
 
 .certificates__slider-btn.next {
-  right: 0;
+  right: -5%;
   height: 100%;
 }
 .certificates__slider-btn.prev {
-  left: 0;
+  left: -5%;
   height: 100%;
 }
 .certificates__item {
