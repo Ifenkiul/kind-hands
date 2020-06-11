@@ -47,6 +47,9 @@ main h3 {
   box-shadow: 0 0 5px 5px white;
   cursor: pointer;
 }
+.mail__form__input.textarea {
+  width: 80%;
+}
 .mail__form__input.btn.submit:active {
   box-shadow: 0 0 5px 5px green;
 }

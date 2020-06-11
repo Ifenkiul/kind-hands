@@ -206,6 +206,17 @@ function scheduleClick(event) {
   if (localDayInfo[timeIndex] === true) {
     alert("Sorry dude, this time is taken");
   } else {
-    alert("Its ok, u can take it");
+    let confirmBox = confirm(
+      "Ви обрали дату " +
+        localDay +
+        " та час " +
+        timeArray[timeIndex] +
+        ". Чи хочете записатись на цей час на масаж?"
+    );
+    if (confirmBox) {
+      document.location.href = "form.html";
+      sessionStorage.setItem("day", localDay);
+      sessionStorage.setItem("time", timeArray[timeIndex]);
+    }
   }
 }
