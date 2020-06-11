@@ -146,6 +146,7 @@ function certificatesScrollResult() {
 let scheduleInfo = [];
 let keysOfSchedule;
 let localDay = "";
+let localDayIndex = 0;
 
 async function fetchJsonSchedule() {
   const response = await fetch("schedule.json");
@@ -153,7 +154,7 @@ async function fetchJsonSchedule() {
   keysOfSchedule = Object.keys(scheduleInfo);
 
   console.log(scheduleInfo);
-  localDay = keysOfSchedule[0];
+  localDay = keysOfSchedule[localDayIndex];
   scheduleShow(localDay);
 
   scheduleTimeArray.forEach((element) =>
@@ -183,11 +184,14 @@ const scheduleTimeArray = document.querySelectorAll(".shedule__hour_div");
 function scheduleShow(day) {
   console.log("local day = " + day);
   scheduleChosenDay.textContent = day;
-
-  let index = 0;
   let localDayInfo = scheduleInfo[day];
+
   for (let i = 0; i < localDayInfo.length; i++) {
     console.log(localDayInfo[i]);
+    scheduleTimeArray[i].textContent = timeArray[i];
+    if (localDayInfo[i] === true) {
+      scheduleTimeArray[i].classList.add("taken");
+    }
   }
 }
 
@@ -195,7 +199,13 @@ function scheduleShow(day) {
 
 function scheduleClick(event) {
   console.log(event.target.innerText);
-  scheduleChosenDay.textContent = `${timeArray.indexOf(
-    event.target.innerText
-  )}`;
+  let localDayInfo = scheduleInfo[localDay];
+  const timeIndex = timeArray.indexOf(event.target.innerText);
+
+  scheduleChosenDay.textContent = `${timeIndex}`;
+  if (localDayInfo[timeIndex] === true) {
+    alert("Sorry dude, this time is taken");
+  } else {
+    alert("Its ok, u can take it");
+  }
 }
