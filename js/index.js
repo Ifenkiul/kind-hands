@@ -1,16 +1,16 @@
 "use strict";
 
-//------------------------ЗАВАНТАЖУЄМО JSON з ОПИСАМИ СЕРВІСІВ
+//------------------------  SERVICES: Loading json with info
 let servicesInfo = [];
 let keysofServices;
 async function fetchJson() {
-  const response = await fetch("services.json");
+  const response = await fetch("json/services.json");
   servicesInfo = await response.json();
   keysofServices = Object.keys(servicesInfo);
 }
 fetchJson();
 
-//-------------------------------- СЕРВІСИ НАТИСКАННЯ НА ЕЛЕМЕНТ
+//-------------------------------- SERVICES: click on element
 const servicesItem = document.querySelectorAll(".services__item");
 const servicesDetail = document.querySelector(".services__back__detail");
 const servicesText = document.querySelector(".services__text");
@@ -87,7 +87,7 @@ function certificatesShowSlide(sliderElements, index, indexPrevious) {
   sliderElements[index].style.display = "block";
 }
 
-//--------------------------------------------- РЕАКЦІЯ НА СКРОЛЛ
+//--------------------------------------------- SCROLL REACTION
 window.addEventListener("scroll", function () {
   conditionsScrollResult();
   servicesScrollResult();
@@ -141,4 +141,61 @@ function certificatesScrollResult() {
       .querySelector(".certificates")
       .classList.remove("certificates-normal");
   }
+}
+// -------------------------- SCHEDULE: json with time loading in object
+let scheduleInfo = [];
+let keysOfSchedule;
+let localDay = "";
+
+async function fetchJsonSchedule() {
+  const response = await fetch("schedule.json");
+  scheduleInfo = await response.json();
+  keysOfSchedule = Object.keys(scheduleInfo);
+
+  console.log(scheduleInfo);
+  localDay = keysOfSchedule[0];
+  scheduleShow(localDay);
+
+  scheduleTimeArray.forEach((element) =>
+    element.addEventListener("click", scheduleClick)
+  );
+}
+fetchJsonSchedule();
+
+// -------------------------- SCHEDULE: loading schedule object content to page
+
+const timeArray = [
+  "9:00 - 9:30",
+  "9:30 - 10:00",
+  "10:00 - 10:30",
+  "10:30 - 11:00",
+  "11:00 - 11:30",
+  "11:30 - 12:00",
+  "12:00 - 12:30",
+  "12:30 - 13:00",
+  "13:00 - 13:30",
+  "13:30 - 14:00",
+];
+const scheduleChosenDay = document.querySelector(".schedule__day");
+const scheduleTimeArray = document.querySelectorAll(".shedule__hour_div");
+
+//-------------------------------- SCHEDULE: shows schedule for specific day
+function scheduleShow(day) {
+  console.log("local day = " + day);
+  scheduleChosenDay.textContent = day;
+
+  let index = 0;
+  let localDayInfo = scheduleInfo[day];
+  for (let i = 0; i < localDayInfo.length; i++) {
+    console.log(localDayInfo[i]);
+  }
+}
+
+//---------------------------------- SCEDULE: click on element
+
+function scheduleClick(event) {
+  console.log(event.target.innerText);
+  scheduleChosenDay.textContent = `${timeArray.indexOf(
+    event.target.innerText
+  )}`;
 }
