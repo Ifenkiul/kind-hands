@@ -255,13 +255,13 @@ main * {
 .present__modal {
   width: 70%;
   cursor: pointer;
-  height: 50%;
+  height: 60%;
   position: fixed;
   bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
   background-image: url("../img/present.jpg");
-  color: var(--color-sky);
+  color: white;
   background-size: cover;
   border: 2px solid white;
   text-align: center;

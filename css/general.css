@@ -143,12 +143,9 @@ footer {
   border-top: 1px solid var(--color-bluedark);
   background-color: var(--color-sky);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
 }
-.footer__contacts {
-  width: 90%;
-  margin: auto;
-}
+
 footer a {
   display: block;
 }
@@ -190,6 +187,12 @@ footer img {
 .footer__contacts-link img:active {
   box-shadow: 0 0 15px var(--color-pink);
   background-color: var(--color-pink);
+}
+.cabinet__login {
+  display: none;
+}
+.cabinet__login__visible {
+  display: block;
 }
 /*----------------------MOBILE ------------------*/
 @media (max-width: 770px) {

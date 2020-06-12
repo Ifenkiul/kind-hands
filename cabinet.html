@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Добрі руки</title>
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="counter" style="position:fixed;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    background-color: green;
+    font-size: 30px;
+    z-index: 9999;"></div>
+    <header>
+        <div class="header__contacts">
+            <a class="header__contacts-link tel" href="tel:+38(096) 121-23-04">+38 (096) 121-23-04</a>
+            <a class="header__contacts-link icon facebook"
+                href="https://www.facebook.com/profile.php?id=100033438499059" target="_blank">
+                <img src="img/facebook_icon.png" alt="Facebook icon">
+            </a>
+            <a class="header__contacts-link icon telegram" href="tg://resolve?domain=Ifenkiul" target="_blank">
+                <img class="header__contacts__tg-image" src="img/telegram_icon.png" alt="telegram icon">
+            </a>
+        </div>
+        <div class="header__toolbar">
+            <div class="header__toolbar__logo">
+                <img class="header__toolbar__logo-image" src="img/hands_mobile.png" alt="Hands image">
+            </div>
+            <div class="header__toolbar__name">
+                <h1>"ДОБРІ&nbsp;РУКИ"</h1>
+                <h3>лікувальний масаж</h3>
+            </div>
+            <div class="header__toolbar__burger">
+                <img src="img/burger_icon.png" alt="burger image">
+            </div>
+            <nav class="header__menu">
+                <ul class="header__menu__list">
+                    <li><a href="index.html#about">ДОВІДКА</a></li>
+                    <li><a href="index.html#services">НАШІ&nbsp;ПОСЛУГИ</a> </li>
+                    <li><a href="index.html#certificates">СЕРТИФІКАТИ</a> </li>
+                    <li><a href="index.html#schedule">РОЗКЛАД</a></li>
+                    <li><a href="form.html">ЗАПИСАТИСЬ</a> </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <h2>ОСОБИСТИЙ КАБІНЕТ</h2>
+        <section class="schedule">
+            <h3>ЗМІНИТИ РОЗКЛАД</h3>
+            <div class="schedule">
+                <div class="schedule__header">
+                    <img class="schedule__header__btn prev" src="img/slider_icon_prev.png" alt="schedule prev button">
+                    <h3 class="schedule__day"></h3>
+                    <img class="schedule__header__btn next" src="img/slider_icon_next.png" alt="schedule next button">
+                </div>
+
+                <div class="schedule__hour">
+                    <div class="schedule__hour_div"></div>
+                    <div class="schedule__hour_div"></div>
+                    <div class="schedule__hour_div"></div>
+                    <div class="schedule__hour_div"></div>
+                    <div class="schedule__hour_div"></div>
+                    <div class="schedule__hour_div"></div>
+                    <div class="schedule__hour_div "></div>
+                    <div class="schedule__hour_div "></div>
+                    <div class="schedule__hour_div"></div>
+                    <div class="schedule__hour_div"></div>
+                    <div class="schedule__hour_div"></div>
+                    <div class="schedule__hour_div"></div>
+                </div>
+
+            </div>
+        </section>
+        <button class="btn__save">ЗБЕРЕГТИ ОНОВЛЕНИЙ ГРАФІК</button>
+    </main>
+
+
+
+
+    <script src="js/general.js"></script>
+    <script src="js/cabinet.js"></script>
+
+</body>
+
+</html>

@@ -15,3 +15,30 @@ window.addEventListener("scroll", function () {
     toolbar.classList.add("header__tolbar-fixed");
   } else toolbar.classList.remove("header__tolbar-fixed");
 });
+
+//----------------------------- PERSONAL CABINET
+const cabinetLoginForm = document.querySelector(".cabinet__login");
+
+document
+  .querySelector(".cabinet__link__btn")
+  .addEventListener("click", function () {
+    cabinetLoginForm.classList.toggle("cabinet__login__visible");
+  });
+
+cabinetLoginForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const nameEntered = document.querySelector(
+    ".cabinet__login__form-input.name"
+  );
+  const passwordEntered = document.querySelector(
+    ".cabinet__login__form-input.password"
+  );
+  if (nameEntered.value === "admin" && passwordEntered.value === "admin") {
+    alert("allesgut");
+    document.location.href = "cabinet.html";
+  } else {
+    alert(
+      "oh u a piece of shit, u bastard... Trying to break my defence mufucka"
+    );
+  }
+});

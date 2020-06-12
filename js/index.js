@@ -154,12 +154,22 @@
   let localDayIndex = 0;
 
   async function fetchJsonSchedule() {
-    const response = await fetch("schedule.json");
-    scheduleInfo = await response.json();
-    keysOfSchedule = Object.keys(scheduleInfo);
+    let storageObj = sessionStorage.getItem("Schedule");
 
-    console.log(scheduleInfo);
-    // localDay = keysOfSchedule[localDayIndex];
+    if (storageObj !== null) {
+      alert("I foun object in sessionStorage, taking it from there...");
+      console.log("Object form storage");
+      scheduleInfo = JSON.parse(storageObj);
+      console.log(scheduleInfo);
+    } else {
+      alert("There is no such object in storage, taking it from server...");
+      const response = await fetch("schedule.json");
+      scheduleInfo = await response.json();
+      console.log("Object from server");
+      console.log(scheduleInfo);
+    }
+
+    keysOfSchedule = Object.keys(scheduleInfo);
     scheduleShow(keysOfSchedule[localDayIndex]);
 
     scheduleTimeArray.forEach((element) =>
