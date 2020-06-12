@@ -135,17 +135,16 @@ main * {
 }
 /*   ---------------------- CERTIFICATES-------------------------*/
 .certificates {
-  width: 100%;
+  width: 0;
   margin: auto;
   opacity: 0;
   transition: all 1s;
   margin-bottom: 100px;
   margin-top: 50px;
-  transform: rotateZ(90deg);
 }
 .certificates-normal {
   opacity: 100%;
-  transform: rotateZ(0);
+  width: 100%;
 }
 .certificates h2 {
   text-align: center;
@@ -207,6 +206,7 @@ main * {
   flex-direction: column;
   box-sizing: border-box;
   margin-bottom: 50px;
+  border-radius: 10px;
 }
 .schedule__hour {
   border: 1px solid var(--color-bluedark);
@@ -220,6 +220,7 @@ main * {
   cursor: pointer;
   border: 1px solid var(--color-bluedark);
   text-align: center;
+  padding: 5px;
 }
 .schedule__hour div:hover {
   border: 1px solid white;
