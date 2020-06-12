@@ -1,5 +1,20 @@
 "use strict";
-
+const scheduleChosenDay = document.querySelector(".schedule__day");
+const scheduleTimeArray = document.querySelectorAll(".schedule__hour_div");
+const timeArray = [
+  "9:00",
+  "9:30",
+  "10:00",
+  "10:30",
+  "11:00",
+  "11:30",
+  "12:00",
+  "12:30",
+  "13:00",
+  "13:30",
+  "14:00",
+  "14:30",
+];
 (function () {
   //--------------------------------------------- SCROLL REACTION
   window.addEventListener("scroll", function () {
@@ -177,25 +192,6 @@
     );
   }
   fetchJsonSchedule();
-
-  // -------------------------- SCHEDULE: loading schedule object content to page
-
-  const timeArray = [
-    "9:00",
-    "9:30",
-    "10:00",
-    "10:30",
-    "11:00",
-    "11:30",
-    "12:00",
-    "12:30",
-    "13:00",
-    "13:30",
-    "14:00",
-    "14:30",
-  ];
-  const scheduleChosenDay = document.querySelector(".schedule__day");
-  const scheduleTimeArray = document.querySelectorAll(".schedule__hour_div");
 
   //-------------------------------- SCHEDULE: shows schedule for specific day
   function scheduleShow(day) {
