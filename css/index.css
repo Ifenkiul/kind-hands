@@ -206,21 +206,24 @@ main * {
   flex-direction: column;
   box-sizing: border-box;
   margin-bottom: 50px;
-  border-radius: 10px;
 }
 .schedule__hour {
-  border: 1px solid var(--color-bluedark);
+  border: 2px solid var(--color-bluedark);
   margin: auto;
   background-color: rgba(155, 177, 255, 0.8);
   width: 50%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  border-radius: 10px;
+  overflow: hidden;
 }
 .schedule__hour_div {
   cursor: pointer;
   border: 1px solid var(--color-bluedark);
   text-align: center;
   padding: 5px;
+  transition: all 0.8s;
 }
 .schedule__hour div:hover {
   border: 1px solid white;
@@ -247,6 +250,31 @@ main * {
 }
 .schedule__header__btn:active {
   opacity: 100%;
+}
+/*------------------------------------- MODAL WINDOW PRESENT */
+.present__modal {
+  width: 70%;
+  cursor: pointer;
+  height: 50%;
+  position: fixed;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-image: url("../img/present.jpg");
+  color: var(--color-sky);
+  background-size: cover;
+  border: 2px solid white;
+  text-align: center;
+  background-position: center;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+.present__modal p {
+  display: block;
+  align-self: center;
+  width: 70%;
 }
 
 /*----------------------------------------------      MOBILE VERSION    770px          --------------------------------------*/

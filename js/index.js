@@ -252,4 +252,15 @@
       }
     }
   }
+  //--------------------------------- MODAL WINDOW
+  let openOrNot = Math.floor(Math.random() * 2);
+  if (openOrNot === 0) {
+    document.querySelector(".present__modal").style.display = "flex";
+  }
+  document
+    .querySelector(".present__modal")
+    .addEventListener(
+      "click",
+      (event) => (event.currentTarget.style.display = "none")
+    );
 })();
