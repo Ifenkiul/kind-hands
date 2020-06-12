@@ -1,5 +1,44 @@
 {
-  "11.06.2020": [true, false, true, false, true, true, true, true, true, true],
-  "12.06.2020": [true, true, true, true, true, true, true, true, true, true],
-  "13.06.2020": [true, true, true, true, true, true, true, true, true, true]
+  "11.06.2020": [
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false,
+    true
+  ],
+  "12.06.2020": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false,
+    true
+  ],
+  "13.06.2020": [
+    false,
+    false,
+    false,
+    false,
+    true,
+    false,
+    false,
+    true,
+    false,
+    true,
+    false,
+    true
+  ]
 }

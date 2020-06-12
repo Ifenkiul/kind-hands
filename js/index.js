@@ -1,4 +1,59 @@
 "use strict";
+//--------------------------------------------- SCROLL REACTION
+window.addEventListener("scroll", function () {
+  conditionsScrollResult();
+  servicesScrollResult();
+  certificatesScrollResult();
+});
+
+function conditionsScrollResult() {
+  const coordinatesConditions = document
+    .querySelector(".main__about__conditions")
+    .getBoundingClientRect().top;
+  // document.querySelector(".counter").innerText = `${coordinatesConditions}`;
+  if (coordinatesConditions < 300) {
+    // document.querySelector(".counter").innerText += "coordinate <500";
+    document
+      .querySelector(".main__about__todo")
+      .classList.add("main__about__todo-normal");
+    document
+      .querySelector(".main__about__nottodo")
+      .classList.add("main__about__nottodo-normal");
+  } else {
+    document
+      .querySelector(".main__about__todo")
+      .classList.remove("main__about__todo-normal");
+    document
+      .querySelector(".main__about__nottodo")
+      .classList.remove("main__about__nottodo-normal");
+  }
+}
+
+function servicesScrollResult() {
+  const coordinatesServices = document
+    .querySelector(".services")
+    .getBoundingClientRect().top;
+  if (coordinatesServices < 250) {
+    document.querySelector(".services").classList.add("services-normal");
+  } else {
+    document.querySelector(".services").classList.remove("services-normal");
+  }
+}
+
+function certificatesScrollResult() {
+  const coordinatesCertificates = document
+    .querySelector(".certificates")
+    .getBoundingClientRect().top;
+  if (coordinatesCertificates < 350) {
+    document
+      .querySelector(".certificates")
+      .classList.add("certificates-normal");
+  } else {
+    document
+      .querySelector(".certificates")
+      .classList.remove("certificates-normal");
+  }
+}
 
 //------------------------  SERVICES: Loading json with info
 let servicesInfo = [];
@@ -87,65 +142,9 @@ function certificatesShowSlide(sliderElements, index, indexPrevious) {
   sliderElements[index].style.display = "block";
 }
 
-//--------------------------------------------- SCROLL REACTION
-window.addEventListener("scroll", function () {
-  conditionsScrollResult();
-  servicesScrollResult();
-  certificatesScrollResult();
-});
-
-function conditionsScrollResult() {
-  const coordinatesConditions = document
-    .querySelector(".main__about__conditions")
-    .getBoundingClientRect().top;
-  // document.querySelector(".counter").innerText = `${coordinatesConditions}`;
-  if (coordinatesConditions < 300) {
-    // document.querySelector(".counter").innerText += "coordinate <500";
-    document
-      .querySelector(".main__about__todo")
-      .classList.add("main__about__todo-normal");
-    document
-      .querySelector(".main__about__nottodo")
-      .classList.add("main__about__nottodo-normal");
-  } else {
-    document
-      .querySelector(".main__about__todo")
-      .classList.remove("main__about__todo-normal");
-    document
-      .querySelector(".main__about__nottodo")
-      .classList.remove("main__about__nottodo-normal");
-  }
-}
-
-function servicesScrollResult() {
-  const coordinatesServices = document
-    .querySelector(".services")
-    .getBoundingClientRect().top;
-  if (coordinatesServices < 250) {
-    document.querySelector(".services").classList.add("services-normal");
-  } else {
-    document.querySelector(".services").classList.remove("services-normal");
-  }
-}
-
-function certificatesScrollResult() {
-  const coordinatesCertificates = document
-    .querySelector(".certificates")
-    .getBoundingClientRect().top;
-  if (coordinatesCertificates < 350) {
-    document
-      .querySelector(".certificates")
-      .classList.add("certificates-normal");
-  } else {
-    document
-      .querySelector(".certificates")
-      .classList.remove("certificates-normal");
-  }
-}
 // -------------------------- SCHEDULE: json with time loading in object
 let scheduleInfo = [];
 let keysOfSchedule;
-let localDay = "";
 let localDayIndex = 0;
 
 async function fetchJsonSchedule() {
@@ -154,8 +153,8 @@ async function fetchJsonSchedule() {
   keysOfSchedule = Object.keys(scheduleInfo);
 
   console.log(scheduleInfo);
-  localDay = keysOfSchedule[localDayIndex];
-  scheduleShow(localDay);
+  // localDay = keysOfSchedule[localDayIndex];
+  scheduleShow(keysOfSchedule[localDayIndex]);
 
   scheduleTimeArray.forEach((element) =>
     element.addEventListener("click", scheduleClick)
@@ -166,19 +165,21 @@ fetchJsonSchedule();
 // -------------------------- SCHEDULE: loading schedule object content to page
 
 const timeArray = [
-  "9:00 - 9:30",
-  "9:30 - 10:00",
-  "10:00 - 10:30",
-  "10:30 - 11:00",
-  "11:00 - 11:30",
-  "11:30 - 12:00",
-  "12:00 - 12:30",
-  "12:30 - 13:00",
-  "13:00 - 13:30",
-  "13:30 - 14:00",
+  "9:00",
+  "9:30",
+  "10:00",
+  "10:30",
+  "11:00",
+  "11:30",
+  "12:00",
+  "12:30",
+  "13:00",
+  "13:30",
+  "14:00",
+  "14:30",
 ];
 const scheduleChosenDay = document.querySelector(".schedule__day");
-const scheduleTimeArray = document.querySelectorAll(".shedule__hour_div");
+const scheduleTimeArray = document.querySelectorAll(".schedule__hour_div");
 
 //-------------------------------- SCHEDULE: shows schedule for specific day
 function scheduleShow(day) {
@@ -187,24 +188,49 @@ function scheduleShow(day) {
   let localDayInfo = scheduleInfo[day];
 
   for (let i = 0; i < localDayInfo.length; i++) {
-    console.log(localDayInfo[i]);
     scheduleTimeArray[i].textContent = timeArray[i];
+    scheduleTimeArray[i].classList.remove("taken");
+
     if (localDayInfo[i] === true) {
       scheduleTimeArray[i].classList.add("taken");
     }
   }
 }
 
+//---------------------------------- SCHEDULE: days navigation
+// const scheduleBtnPrev = document.querySelector(".schedule__header__btn.prev");
+// const scheduleBtnNext = document.querySelector(".schedule__header__btn.next");
+document
+  .querySelectorAll(".schedule__header__btn")
+  .forEach((element) => element.addEventListener("click", scheduleBtnClick));
+
+function scheduleBtnClick(event) {
+  switch (event.target) {
+    case document.querySelector(".schedule__header__btn.prev"):
+      break;
+
+    case document.querySelector(".schedule__header__btn.next"):
+      alert(localDayIndex + " " + keysOfSchedule.length);
+      if (localDayIndex + 1 < keysOfSchedule.length) {
+        localDayIndex++;
+      }
+      break;
+  }
+  scheduleShow(keysOfSchedule[localDayIndex]);
+}
+
 //---------------------------------- SCEDULE: click on element
 
 function scheduleClick(event) {
   console.log(event.target.innerText);
+  const localDay = keysOfSchedule[localDayIndex];
   let localDayInfo = scheduleInfo[localDay];
   const timeIndex = timeArray.indexOf(event.target.innerText);
 
-  scheduleChosenDay.textContent = `${timeIndex}`;
   if (localDayInfo[timeIndex] === true) {
-    alert("Sorry dude, this time is taken");
+    alert(
+      "Вибачте, цей час нажаль зайнято. Всі зайняті проміжки часу відмічені червоним."
+    );
   } else {
     let confirmBox = confirm(
       "Ви обрали дату " +

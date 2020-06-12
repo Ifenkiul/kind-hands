@@ -200,27 +200,50 @@ main * {
 
 /*---------------------- SCHEDULE -----------------------*/
 .schedule {
-  background-color: yellow;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
   box-sizing: border-box;
   margin-bottom: 50px;
 }
 .schedule__hour {
+  border: 1px solid var(--color-bluedark);
+  margin: auto;
   background-color: rgba(155, 177, 255, 0.8);
   width: 50%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.schedule__hour div {
+.schedule__hour_div {
   cursor: pointer;
   border: 1px solid var(--color-bluedark);
   text-align: center;
 }
-.shedule__hour_div.taken {
+.schedule__hour div:hover {
+  border: 1px solid white;
+  color: white;
+}
+.schedule__hour_div.taken {
   background-color: var(--color-pink);
+}
+.schedule__header {
+  display: flex;
+  justify-content: center;
+}
+.schedule__header__btn {
+  display: block;
+  height: 30px;
+  width: 30px;
+  opacity: 30%;
+  cursor: pointer;
+}
+.schedule__header__btn:hover {
+  opacity: 60%;
+}
+.schedule__header__btn:active {
+  opacity: 100%;
 }
 
 /*----------------------------------------------      MOBILE VERSION    770px          --------------------------------------*/
