@@ -37,8 +37,6 @@ cabinetLoginForm.addEventListener("submit", function (event) {
     alert("allesgut");
     document.location.href = "cabinet.html";
   } else {
-    alert(
-      "oh u a piece of shit, u bastard... Trying to break my defence mufucka"
-    );
+    alert("Ви ввели неправильний логін чи пароль. Спробуйте ще раз.");
   }
 });
