@@ -224,6 +224,7 @@ main * {
 .schedule__hour div:hover {
   border: 1px solid white;
   color: white;
+  text-shadow: 1px 1px 15px var(--color-pink);
 }
 .schedule__hour_div.taken {
   background-color: var(--color-pink);
@@ -231,6 +232,7 @@ main * {
 .schedule__header {
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 .schedule__header__btn {
   display: block;

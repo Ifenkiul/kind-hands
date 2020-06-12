@@ -198,8 +198,6 @@ function scheduleShow(day) {
 }
 
 //---------------------------------- SCHEDULE: days navigation
-// const scheduleBtnPrev = document.querySelector(".schedule__header__btn.prev");
-// const scheduleBtnNext = document.querySelector(".schedule__header__btn.next");
 document
   .querySelectorAll(".schedule__header__btn")
   .forEach((element) => element.addEventListener("click", scheduleBtnClick));
@@ -207,10 +205,12 @@ document
 function scheduleBtnClick(event) {
   switch (event.target) {
     case document.querySelector(".schedule__header__btn.prev"):
+      if (localDayIndex - 1 >= 0) {
+        localDayIndex--;
+      }
       break;
 
     case document.querySelector(".schedule__header__btn.next"):
-      alert(localDayIndex + " " + keysOfSchedule.length);
       if (localDayIndex + 1 < keysOfSchedule.length) {
         localDayIndex++;
       }
