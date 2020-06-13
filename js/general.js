@@ -1,3 +1,10 @@
+//-----------------click on LOGO TeXT
+document
+  .querySelector(".header__toolbar__name")
+  .addEventListener("click", function () {
+    window.scrollTo(0, 0);
+  });
+
 //НАТИСКАННЯ НА БУРГЕР КНОПКУ
 const burgerBtn = document.querySelector(".header__toolbar__burger");
 burgerBtn.addEventListener("click", function () {

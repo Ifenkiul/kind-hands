@@ -92,6 +92,7 @@ body {
 }
 .header__toolbar__name {
   color: var(--color-light);
+  cursor: pointer;
 }
 .header__name__mini {
   text-align: center;

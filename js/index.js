@@ -172,16 +172,11 @@ const timeArray = [
     let storageObj = sessionStorage.getItem("Schedule");
 
     if (storageObj !== null) {
-      alert("I foun object in sessionStorage, taking it from there...");
-      console.log("Object form storage");
       scheduleInfo = JSON.parse(storageObj);
-      console.log(scheduleInfo);
     } else {
       alert("There is no such object in storage, taking it from server...");
       const response = await fetch("schedule.json");
       scheduleInfo = await response.json();
-      console.log("Object from server");
-      console.log(scheduleInfo);
     }
 
     keysOfSchedule = Object.keys(scheduleInfo);
@@ -195,7 +190,6 @@ const timeArray = [
 
   //-------------------------------- SCHEDULE: shows schedule for specific day
   function scheduleShow(day) {
-    console.log("local day = " + day);
     scheduleChosenDay.textContent = day;
     let localDayInfo = scheduleInfo[day];
 
