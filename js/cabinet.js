@@ -80,30 +80,28 @@
   //---------------------------------- SCEDULE: click on element
 
   function scheduleClick(event) {
-    console.log(event.target.innerText);
     const localDay = keysOfSchedule[localDayIndex];
-    let localDayInfo = scheduleInfo[localDay];
     const timeIndex = timeArray.indexOf(event.target.innerText);
 
-    let confirmBox = confirm(
-      "Ви дійсно хочете змінити значеня для цього блоку"
-    );
-    if (confirmBox) {
-      if (scheduleInfo[localDay][timeIndex] === true) {
-        scheduleInfo[localDay][timeIndex] = false;
-      } else {
-        scheduleInfo[localDay][timeIndex] = true;
-      }
-      console.log(scheduleInfo[localDay]);
-      scheduleShow(keysOfSchedule[localDayIndex]);
+    if (scheduleInfo[localDay][timeIndex] === true) {
+      scheduleInfo[localDay][timeIndex] = false;
+    } else {
+      scheduleInfo[localDay][timeIndex] = true;
     }
+
+    scheduleShow(keysOfSchedule[localDayIndex]);
   }
   //----------------------------------------- SCHEDULE: write changed object to json
   document.querySelector(".btn__save").addEventListener("click", saveToStorage);
 
   function saveToStorage() {
-    sessionStorage.setItem("Schedule", JSON.stringify(scheduleInfo));
-    console.log(sessionStorage.getItem("Schedule"));
+    const confirmBox = confirm(
+      "Ви дійсно хочете змінити значеня для цього блоку"
+    );
+    if (confirmBox) {
+      sessionStorage.setItem("Schedule", JSON.stringify(scheduleInfo));
+      console.log(sessionStorage.getItem("Schedule"));
+    }
   }
 
   //   function login() {

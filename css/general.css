@@ -93,6 +93,15 @@ body {
 .header__toolbar__name {
   color: var(--color-light);
   cursor: pointer;
+  user-select: none;
+  transition: all 0.4s;
+}
+.header__toolbar__name:hover {
+  text-shadow: 1px 3px 5px white;
+  color: var(--color-bluedark);
+}
+.header__toolbar__name:active {
+  color: var(--color-pink);
 }
 .header__name__mini {
   text-align: center;
@@ -129,7 +138,7 @@ h3 {
 .header__menu__list a {
   text-decoration: none;
   color: var(--color-light);
-  transition: all 0.8s;
+  transition: all 0.5s;
 }
 .header__menu__list a:hover {
   color: var(--color-bluedark);
@@ -248,5 +257,16 @@ footer img {
   .menu-burger {
     top: 65px;
     left: 50%;
+  }
+}
+@media (max-width: 350px) {
+  .header__toolbar__name {
+    display: none;
+  }
+  .header__name__mini {
+    display: block;
+  }
+  .header__name__mini p {
+    text-align: center;
   }
 }

@@ -2,6 +2,10 @@
 document
   .querySelector(".header__toolbar__name")
   .addEventListener("click", function () {
+    if (document.location.href !== "index.html") {
+      document.location.href = "index.html";
+    }
+
     window.scrollTo(0, 0);
   });
 
