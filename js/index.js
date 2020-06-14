@@ -174,7 +174,6 @@ const timeArray = [
     if (storageObj !== null) {
       scheduleInfo = JSON.parse(storageObj);
     } else {
-      alert("There is no such object in storage, taking it from server...");
       const response = await fetch("schedule.json");
       scheduleInfo = await response.json();
     }

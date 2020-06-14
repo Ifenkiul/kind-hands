@@ -261,7 +261,7 @@ main * {
   left: 50%;
   transform: translateX(-50%);
   background-image: url("../img/present.jpg");
-  color: white;
+  color: pink;
   background-size: cover;
   border: 2px solid white;
   text-align: center;
