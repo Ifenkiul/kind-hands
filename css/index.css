@@ -277,6 +277,20 @@ main * {
   width: 70%;
 }
 
+.cabinet__link__btn,
+.cabinet__login__form-input {
+  background-color: var(--color-sky);
+  border: 1px solid var(--color-bluedark);
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  outline: none;
+}
+.cabinet__login__form-input:focus {
+  background-color: var(--color-pink);
+}
+
 /*----------------------------------------------      MOBILE VERSION    770px          --------------------------------------*/
 @media (max-width: 770px) {
   .main__about__todo {

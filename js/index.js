@@ -228,7 +228,6 @@ const timeArray = [
   //---------------------------------- SCEDULE: click on element
 
   function scheduleClick(event) {
-    console.log(event.target.innerText);
     const localDay = keysOfSchedule[localDayIndex];
     let localDayInfo = scheduleInfo[localDay];
     const timeIndex = timeArray.indexOf(event.target.innerText);
@@ -253,7 +252,7 @@ const timeArray = [
     }
   }
   //--------------------------------- MODAL WINDOW
-  let openOrNot = Math.floor(Math.random() * 2);
+  let openOrNot = Math.floor(Math.random() * 4);
   if (openOrNot === 0) {
     document.querySelector(".present__modal").style.display = "flex";
   }
@@ -263,4 +262,30 @@ const timeArray = [
       "click",
       (event) => (event.currentTarget.style.display = "none")
     );
+
+  //----------------------------- PERSONAL CABINET
+  const cabinetLoginForm = document.querySelector(".cabinet__login");
+
+  document
+    .querySelector(".cabinet__link__btn")
+    .addEventListener("click", function () {
+      cabinetLoginForm.classList.toggle("cabinet__login__visible");
+    });
+
+  cabinetLoginForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const nameEntered = document.querySelector(
+      ".cabinet__login__form-input.name"
+    );
+    const passwordEntered = document.querySelector(
+      ".cabinet__login__form-input.password"
+    );
+    if (nameEntered.value === "admin" && passwordEntered.value === "admin") {
+      document.location.href = "cabinet.html";
+    } else {
+      alert("Ви ввели неправильний логін чи пароль. Спробуйте ще раз.");
+      nameEntered.value = "";
+      passwordEntered.value = "";
+    }
+  });
 })();
