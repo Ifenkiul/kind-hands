@@ -41,7 +41,6 @@
 
   //-------------------------------- SCHEDULE: shows schedule for specific day
   function scheduleShow(day) {
-    console.log("local day = " + day);
     scheduleChosenDay.textContent = day;
     let localDayInfo = scheduleInfo[day];
 
@@ -95,14 +94,31 @@
   document.querySelector(".btn__save").addEventListener("click", saveToStorage);
 
   function saveToStorage() {
-    const confirmBox = confirm(
-      "Ви дійсно хочете змінити значеня для цього блоку"
-    );
-    if (confirmBox) {
-      sessionStorage.setItem("Schedule", JSON.stringify(scheduleInfo));
-      console.log(sessionStorage.getItem("Schedule"));
-    }
+    confirmMessage();
+    sessionStorage.setItem("Schedule", JSON.stringify(scheduleInfo));
   }
+
+  function confirmMessage() {
+    document.querySelector(".msg__confirm").classList.add("visible");
+    document.querySelector(
+      ".msg__confirm-text"
+    ).innerText = `Ви дійсно хочете змінити значеня  в розкладі?`;
+  }
+
+  document.querySelectorAll(".msg__confirm-btn").forEach((element) =>
+    element.addEventListener("click", function (event) {
+      const buttonText = event.target.innerText;
+      switch (buttonText) {
+        case "OK":
+          document.querySelector(".msg__confirm").classList.remove("visible");
+          break;
+        case "CANCEL":
+          sessionStorage.setItem("Schedule", null);
+          document.querySelector(".msg__confirm").classList.remove("visible");
+          break;
+      }
+    })
+  );
 
   //   function login() {
   //     // e.preventDefault();

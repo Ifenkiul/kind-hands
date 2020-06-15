@@ -290,7 +290,66 @@ main * {
 .cabinet__login__form-input:focus {
   background-color: var(--color-pink);
 }
-
+/*---------------------------------------  MESSAGE BOXES */
+.msg__confirm {
+  font-size: 20px;
+  text-align: center;
+  background-color: var(--color-pink);
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  color: white;
+  border: 2px solid var(--color-bluedark);
+  border-radius: 10px;
+  transform: translateX(-50%);
+  display: none;
+  padding: 10px;
+}
+.msg__confirm.visible {
+  display: block;
+}
+.msg__confirm-btn {
+  background-color: var(--color-pink);
+  outline: none;
+  border: 1px solid var(--color-bluedark);
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
+.msg__confirm-btn:hover {
+  background-color: var(--color-sky);
+}
+.msg__alert {
+  font-size: 20px;
+  text-align: center;
+  background-color: var(--color-bluedark);
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  color: white;
+  border: 2px solid var(--color-pink);
+  border-radius: 10px;
+  transform: translateX(-50%);
+  display: none;
+  padding: 10px;
+}
+.msg__alert.visible {
+  display: block;
+}
+.msg__alert-btn {
+  background-color: var(--color-pink);
+  outline: none;
+  border: 1px solid var(--color-sky);
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.msg__alert-btn:hover {
+  background-color: var(--color-sky);
+}
 /*----------------------------------------------      MOBILE VERSION    770px          --------------------------------------*/
 @media (max-width: 770px) {
   .main__about__todo {

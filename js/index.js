@@ -232,24 +232,50 @@ const timeArray = [
     const timeIndex = timeArray.indexOf(event.target.innerText);
 
     if (localDayInfo[timeIndex] === true) {
-      alert(
-        "Вибачте, цей час нажаль зайнято. Всі зайняті проміжки часу відмічені червоним."
+      alertMessage(
+        "Шановний відвідувачу, нажаль обраний Вами час зайнято. Вільний час позначено блакитними ячейками, зайнятий -  червоними."
       );
     } else {
-      let confirmBox = confirm(
-        "Ви обрали дату " +
-          localDay +
-          " та час " +
-          timeArray[timeIndex] +
-          ". Чи хочете записатись на цей час на масаж?"
-      );
-      if (confirmBox) {
-        document.location.href = "form.html";
-        sessionStorage.setItem("day", localDay);
-        sessionStorage.setItem("time", timeArray[timeIndex]);
-      }
+      confirmMessage(localDay, timeArray, timeIndex);
+      sessionStorage.setItem("day", localDay);
+      sessionStorage.setItem("time", timeArray[timeIndex]);
     }
   }
+
+  function alertMessage(string) {
+    document.querySelector(".msg__alert").classList.add("visible");
+    document.querySelector(".msg__alert-text").textContent = string;
+  }
+  document
+    .querySelector(".msg__alert-btn")
+    .addEventListener("click", () =>
+      document.querySelector(".msg__alert").classList.remove("visible")
+    );
+
+  function confirmMessage(localDay, timeArray, timeIndex) {
+    document.querySelector(".msg__confirm").classList.add("visible");
+    document.querySelector(
+      ".msg__confirm-text"
+    ).innerText = `Шановний відвідувачу, Ви обрали дату ${localDay} та час ${timeArray[timeIndex]}. Чи хочете записатись на цей час на масаж?`;
+  }
+
+  document.querySelectorAll(".msg__confirm-btn").forEach((element) =>
+    element.addEventListener("click", function (event) {
+      const buttonText = event.target.innerText;
+      switch (buttonText) {
+        case "OK":
+          document.location.href = "form.html";
+          break;
+        case "CANCEL":
+          sessionStorage.setItem("day", "");
+          sessionStorage.setItem("time", "");
+          document.querySelector(".msg__confirm").classList.remove("visible");
+          break;
+      }
+      console.log(sessionStorage);
+    })
+  );
+
   //--------------------------------- MODAL WINDOW
   let openOrNot = Math.floor(Math.random() * 4);
   if (openOrNot === 0) {
@@ -282,7 +308,7 @@ const timeArray = [
     if (nameEntered.value === "admin" && passwordEntered.value === "admin") {
       document.location.href = "cabinet.html";
     } else {
-      alert("Ви ввели неправильний логін чи пароль. Спробуйте ще раз.");
+      alertMessage("Ви ввели неправильний логін чи пароль. Спробуйте ще раз.");
       nameEntered.value = "";
       passwordEntered.value = "";
     }
